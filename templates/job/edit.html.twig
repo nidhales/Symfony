@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+{% block title %}Edit Job
+{% endblock %}
+{% block content%}
+	<!DOCTYPE html>
+	<html>
+		<style>
+			input[type=text],
+			select {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				display: inline-block;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+
+			input[type=submit] {
+				width: 100%;
+				background-color: #4CAF50;
+				color: white;
+				padding: 14px 20px;
+				margin: 8px 0;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+			label {
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			input[type=submit]:hover {
+				background-color: #45a049;
+			}
+			textarea {
+				width: 100%;
+			}
+			.bg {
+				text-align: center;
+				border-radius: 5px;
+				background-color: #EAE7DC;
+				padding: 20px;
+			}
+			h3 {
+				font-size: 40px;
+				text-shadow: -1.5px 1.5px grey;
+				margin-bottom: 15px;
+			}
+		</style>
+		<div class="row justify-content-center">
+			<div class="bg col-lg-9">
+				<body>
+					<div class="bg">
+						<h3>Modifier Formulaire</h3>
+						<form>
+							<label for="fname">Intitulé</label>
+							<input type="text" id="fname" name="intitulé" placeholder="Intitulé...">
+
+							<label for="lname">Societé</label>
+							<input type="text" id="lname" name="Societé" placeholder="Societé...">
+							<label class="label" for="description">Description :</label><br>
+							<textarea name="Description" rows="10" cols="30"></textarea>
+							<button type="submit" class="btn btn-warning" style="margin-top: 10px;">Edit
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewbox="0 0 16 16">
+									<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+									<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+								</svg>
+							</button>
+						</form>
+					</div>
+				</body>
+			</div>
+		</div>
+	</html>
+</body></html>{% endblock %}

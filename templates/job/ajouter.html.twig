@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+	<h1 class="text-center">{{Ajouter name | capitilize}}</h1>
+	<div class="container">
+		{{include('job/add.html.twig')}}
+	</div>
+{% endblock %}
