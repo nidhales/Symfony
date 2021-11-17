@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Job;
+use Doctrine\ORM\Mapping\Id;
 use SebastianBergmann\CodeCoverage\Report\Html\Renderer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -32,13 +34,29 @@ class JobController extends AbstractController
      */
     public function voir($id)
     {
-        return $this->render('job/voir.html.twig', ['id' => $id]);
+        $job = $this->getDoctrine()->getManager()->getRepository(Job::class)->find($id);
+        return $this->render('job/voir.html.twig', [
+            'id' => $id,
+            'job' => $job
+        ]);
     }
     /**
      * @Route("/add", name="add")
      */
     public function add()
     {
+        $job = new job();
+        $job->setTitle('Developeur symfony');
+        $job->setcompany('Sloth-Lab');
+        $job->setDescription('searching for a symfony developer');
+        $job->setIsActivated(1);
+        $job->setExpiresAt(new \DateTimeImmutable());
+        $job->setEmail('nidhales@gmailcom');
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($job);
+        $em->flush();
+
         #$url = $this->get('router')->generate('job');
         return $this->render('job/add.html.twig');
     }
